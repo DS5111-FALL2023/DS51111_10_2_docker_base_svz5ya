@@ -20,12 +20,18 @@ interbash:
 # login to dockerhub
 .PHONY: login
 login:
-	docker login -u "DOCKER_USER"
+	docker login -u "raulherale09"
+
+## CHANGE TAG for local docker repo to match dockerhub repo:
+.PHONY: changeTag
+changeTag:
+	docker tag knn_iris:latest raulherale09/docker_lab_01:latest
+
 
 # now push your image to dockerhub
 .PHONY: push
 push:
-	docker push <DOCKER_USER>/<DOCKER_REPO>:latest
+	docker push raulherale09/docker_lab_01:latest
 
 
 
